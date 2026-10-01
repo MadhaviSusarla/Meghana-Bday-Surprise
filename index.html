@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Meghana 🦋</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap');
+*{box-sizing:border-box}body{margin:0;min-height:100vh;overflow:hidden;font-family:'DM Sans',sans-serif;color:#594b62;background:linear-gradient(135deg,#fff8fc,#f5f0ff 52%,#edfaff)}
+.screen{display:none;min-height:100vh;align-items:center;justify-content:center;padding:22px}.screen.active{display:flex}
+.card{width:min(650px,100%);max-height:92vh;overflow:auto;text-align:center;padding:38px 24px;border:1px solid #ffffffd9;background:#ffffffb8;backdrop-filter:blur(18px);border-radius:32px;box-shadow:0 25px 80px #5b417326}
+h1,h2{font-family:'Playfair Display',serif;color:#67526f}h1{font-size:clamp(2.6rem,10vw,4.8rem);line-height:1.05}h2{font-size:clamp(2rem,7vw,3rem);margin-bottom:15px}
+p{line-height:1.75;font-size:1.03rem}.emoji{font-size:3.2rem;margin-bottom:13px}.subtitle{margin:15px auto 26px;max-width:510px}
+button{border:0;cursor:pointer;padding:14px 23px;border-radius:999px;background:#8e78b8;color:white;font-weight:700;font-size:1rem;box-shadow:0 10px 25px #6e559126;transition:.25s}button:hover{transform:translateY(-2px) scale(1.02)}
+button.soft{background:white;color:#735e7c;border:1px solid #eadff0}.small{font-size:.82rem;opacity:.7;margin-top:12px}.story{display:grid;gap:11px;text-align:left;margin:22px 0}.story div,.message{background:#fff8fc;border-radius:18px;padding:15px 17px}.story div{border-left:4px solid #c8b4dd}
+.choice{width:100%;margin:7px 0;text-align:left;background:#ffffffeb;color:#68556e;border:1px solid #eee2f1;box-shadow:none}
+.jar{font-size:5rem;cursor:pointer;display:inline-block;animation:bob 2s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-7px)}}
+.song{margin:12px 0;padding:18px;border-radius:20px;background:linear-gradient(135deg,#fbf0ff,#eefaff)}.cake{font-size:6rem;cursor:pointer;animation:pulse 1.8s infinite}@keyframes pulse{50%{transform:scale(1.06)}}
+.bfly,.star{position:fixed;pointer-events:none;z-index:0;opacity:.45;animation:rise 11s linear infinite}.bfly{font-size:27px}@keyframes rise{0%{transform:translateY(105vh);opacity:0}15%{opacity:.45}100%{transform:translateY(-10vh);opacity:0}}
+.dots{position:fixed;bottom:10px;left:0;right:0;text-align:center;z-index:8}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#d1c0dc;margin:4px}.dot.on{width:19px;border-radius:8px;background:#8269a5}
+.pop{animation:pop .6s ease}@keyframes pop{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}
+.hidden{display:none!important}@media(max-width:500px){.card{padding:30px 18px}.cake{font-size:5rem}}
+</style>
+</head>
+<body><div id="decor"></div>
+
+<section class="screen active" id="s1"><div class="card"><div class="emoji">🌙🦋✨</div><h1>Hey Meghana…</h1><p class="subtitle">I made a tiny little world for you.<br>But you have to promise me you'll explore it properly. 👀</p><button onclick="go(2)">I'm ready 🦋</button></div></section>
+
+<section class="screen" id="s2"><div class="card"><div class="emoji">🎀</div><h2>One little question…</h2><p class="subtitle">Do you know how some of the nicest people just… appear in your life?</p><button onclick="reveal()">Maybe? 👀</button><div id="promise" class="message hidden"></div><br><button id="next2" class="hidden" onclick="go(3)">Okay, continue 🌸</button></div></section>
+
+<section class="screen" id="s3"><div class="card"><div class="emoji">🏠🌷</div><h2>It all started with a PG.</h2><div class="story"><div>🏠 Two girls. One PG.</div><div>💬 Random conversations.</div><div>😂 Random laughs.</div><div>🦋 No big plan… just friendship happening naturally.</div></div><p><b>And somehow, a PG mate became a friend. 🤍</b></p><br><button onclick="go(4)">Tell me more 👀</button></div></section>
+
+<section class="screen" id="s4"><div class="card">
+<div class="emoji">🌸🦋</div>
+<h2>The little moments I'll keep</h2>
+<p>Some of my favorite memories weren't big or planned.</p>
+<div class="message" style="text-align:left;margin-top:20px">
+<p>They were the random conversations, the silly laughs, the little everyday moments…</p>
+<p>The kind of ordinary moments that somehow become your favorite memories. 🤍</p>
+<p>Now that you've moved out of the PG, I think I realize how much I actually loved those little moments we shared.</p>
+<p><b>I genuinely cherished every one of them, and I know I'll look back at them for a very long time with a big smile. 🌷</b></p>
+<p>Maybe that's the funny thing about friendship—sometimes you don't realize you're making memories until the moment has already passed. 🦋</p>
+</div>
+<br><button onclick="go(5)">One more little surprise →</button>
+</div></section>
+
+<section class="screen" id="s5"><div class="card"><div class="emoji">🎁</div><h2>Pick one…</h2><p class="subtitle">Choose whichever your birthday-girl instincts tell you to choose. 😌</p><button class="choice" onclick="pick(0)">🌸 Something sweet</button><button class="choice" onclick="pick(1)">🦋 Something cute</button><button class="choice" onclick="pick(2)">🎀 Something mysterious</button><div id="pickmsg" class="message hidden"></div><br><button id="next4" class="hidden" onclick="go(6)">One more thing →</button></div></section>
+
+<section class="screen" id="s6"><div class="card"><h2>🫙 The Friendship Jar</h2><p class="subtitle">Tap the jar. It has a few tiny messages for you.</p><div class="jar" onclick="jar()">🫙</div><div id="jarm" class="message">Tap me, birthday girl 🥹</div><br><button onclick="go(7)">Our little soundtrack 🎵</button></div></section>
+
+<section class="screen" id="s7"><div class="card"><div class="emoji">🎵🦋</div><h2>A little something I remembered you love…</h2><div class="song"><b>🌸 Aa Seetadevi Navvula</b><br><br><button class="soft" id="musicButton" onclick="seetadevi()">▶ Play your favourite song</button></div><p class="small" id="musicStatus">Tap Play once to start the song. It will continue as you explore the website. 🤍</p><br><button onclick="go(8)">One last thing… 💌</button></div></section>
+
+<section class="screen" id="s8"><div class="card"><div class="emoji">💌</div><h2>A little birthday note</h2><div class="message" style="text-align:left"><p>Dear Meghana,</p><p>It's funny how some of the nicest people in our lives aren't people we went looking for.</p><p>Sometimes they're simply the person who happens to become your PG mate… and then, somewhere between random conversations and ordinary days, they become your friend. 🥹</p><p>You're genuinely cute and sweet, and I'm really glad our paths crossed.</p><p>I hope this year brings you lots of happiness, silly laughs, beautiful memories and all the little things that make your heart happy. 🌷</p>
+<p>And whenever you think about those PG days and our little moments, I hope they make you smile too. 🤍</p><p><b>Happy Birthday, Meghana. 🦋💗</b></p></div><br><button onclick="go(9)">There's one final surprise 🎂</button></div></section>
+
+<section class="screen" id="s9"><div class="card"><h2>One last thing…</h2><p class="subtitle">You have to blow out the candle. 😌<br>(Okay, okay… tap it.)</p><div class="cake" onclick="finale()">🎂</div><p id="hint" class="small">Tap the cake 🕯️</p></div></section>
+
+<section class="screen" id="s10"><div class="card pop"><div style="font-size:3rem">🎉🦋✨🌸🦋✨🎉</div><h1>Happy Birthday, Meghana!</h1><p class="subtitle">October 2, 2026 🌷</p><p style="font-size:1.25rem"><b>Here's to all the random little moments that turn into beautiful memories. 💗</b></p><p>Keep being your cute, sweet self. 🦋</p><br><button class="soft" onclick="go(1)">↻ Start again</button></div></section>
+
+<audio id="birthdayAudio" src="aa-seetadevi.mp3" preload="metadata" loop></audio>
+<button id="musicToggle" onclick="seetadevi()" aria-label="Pause or resume music" style="display:none;position:fixed;right:18px;bottom:22px;z-index:20;border:0;border-radius:24px;padding:11px 16px;background:#8f78b8;color:white;font:600 14px DM Sans,sans-serif;box-shadow:0 8px 24px #5b417333">🎵 Pause music</button>
+<div class="dots" id="dots"></div>
+<script>
+let page=1,total=10,ji=0;
+const jarMsgs=["For all the random conversations that somehow became memories. 🌸","For the laughs we didn't plan. 😂🦋","For the friendship that just happened. 🤍","For all the little moments we haven't made yet. ✨","For having a cute, sweet PG mate who became a friend. 🎀"];
+function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');page=n;dots()}
+function dots(){dotsEl=document.getElementById('dots');dotsEl.innerHTML=Array.from({length:total},(_,i)=>'<span class="dot '+(i+1===page?'on':'')+'"></span>').join('')}
+function reveal(){let x=document.getElementById('promise');x.textContent="Sometimes they just become part of your everyday life… and before you know it, you're friends. 🦋";x.classList.remove('hidden');document.getElementById('next2').classList.remove('hidden')}
+function pick(n){let a=["🌸 Sweet choice. Just like you. I hope your birthday is filled with tiny happy things.","🦋 Cute choice. Obviously you would pick this one. 😂","🎀 Ooooh, mystery. I knew you were going to choose this. There's still more waiting for you…"];let x=document.getElementById('pickmsg');x.textContent=a[n];x.classList.remove('hidden');document.getElementById('next4').classList.remove('hidden')}
+function jar(){document.getElementById('jarm').textContent=jarMsgs[ji++%jarMsgs.length]}
+function seetadevi(){
+ const audio=document.getElementById('birthdayAudio');
+ const sectionButton=document.getElementById('musicButton');
+ const floatingButton=document.getElementById('musicToggle');
+ const status=document.getElementById('musicStatus');
+ if(audio.paused){
+   status.textContent='Loading your song… 🎶';
+   audio.play().then(()=>{
+     sectionButton.textContent='Ⅱ Pause your favourite song';
+     floatingButton.textContent='🎵 Pause music';
+     floatingButton.style.display='block';
+     status.textContent='Now playing — the music will continue as you explore. 🤍';
+   }).catch((err)=>{
+     sectionButton.textContent='▶ Play your favourite song';
+     status.textContent='Could not play the audio. Please check that aa-seetadevi.mp3 is uploaded beside index.html, then refresh. ('+err.message+')';
+   });
+ }else{
+   audio.pause();
+   sectionButton.textContent='▶ Play your favourite song';
+   floatingButton.textContent='🎵 Play music';
+   status.textContent='Song paused. Tap Play whenever you like. 🤍';
+ }
+}
+document.getElementById('birthdayAudio').addEventListener('error',()=>{
+ const status=document.getElementById('musicStatus');
+ if(status) status.textContent='Audio file not found. Make sure aa-seetadevi.mp3 is in the same GitHub folder as index.html.';
+});
+document.getElementById('birthdayAudio').addEventListener('ended',()=>{
+ document.getElementById('musicButton').textContent='▶ Play your favourite song';
+ document.getElementById('musicToggle').textContent='🎵 Play music';
+});
+function finale(){document.getElementById('hint').textContent='✨ Make a wish! ✨';setTimeout(()=>go(10),650)}
+for(let n=0;n<18;n++){let b=document.createElement('div');b.className=n%3?'bfly':'star';b.textContent=n%3?['🦋','🌸','✦'][n%3]:'✦';b.style.left=Math.random()*100+'%';b.style.animationDelay=(-Math.random()*11)+'s';b.style.animationDuration=(8+Math.random()*9)+'s';document.getElementById('decor').appendChild(b)}dots();
+</script></body></html>
